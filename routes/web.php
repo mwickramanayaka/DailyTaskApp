@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', function () {
-    return view('tasks');
+    $data=App\Models\Task::all();
+    return view('tasks')->with('tasks',$data);
 });
 
 Route::post('/saveTask',[TaskController::class, 'store']);
-// Route::post('/saveTask', 'TaskController@store');

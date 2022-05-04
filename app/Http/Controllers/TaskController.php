@@ -12,6 +12,9 @@ class TaskController extends Controller
         $this->validate($request,['task'=>'required|max:100|min:5']);
         $task->task=$request->task;
         $task->save();
-        return redirect()->back();
+
+        $data=Task::all();
+        // dd($data);
+        return view('tasks')->with('tasks',$data);
     }
 }
