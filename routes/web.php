@@ -23,3 +23,4 @@ Route::get('/tasks', function () {
 });
 
 Route::post('/saveTask',[TaskController::class, 'store']);
+// Route::post('/saveTask', 'TaskController@store');
