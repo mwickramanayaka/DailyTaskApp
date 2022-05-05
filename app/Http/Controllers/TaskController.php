@@ -14,7 +14,13 @@ class TaskController extends Controller
         $task->save();
 
         $data=Task::all();
-        // dd($data);
         return view('tasks')->with('tasks',$data);
+    }
+
+    public function UpdateTaskAsCompleted($id){
+        $task=Task::find($id);
+        $task->iscompleted=1;
+        $task->save();
+        return redirect()->back();
     }
 }

@@ -14,7 +14,7 @@
         <div class="text-center">
             <h1>Daily Tasks</h1>
             <div class="row">
-                <div class="col-md-12">
+                <div class="mx-auto" style="width: 700px;">
                     @foreach($errors->all() as $error)
                     <div class="alert alert-danger" role="alert">
                         {{$error}}
@@ -27,20 +27,25 @@
                         <input type="submit" class="btn btn-primary" value="SAVE">
                         <input type="button" class="btn btn-warning" value="CLEAR">
                     </form>
+                    </br>
                     <table class="table table-dark">
                         <th>ID</th>
                         <th>Task</th>
                         <th>Completed</th>
+                        <th>Action</th>
                         @foreach($tasks as $task)
                         <tr>
                             <td>{{$task->id}}</td>
                             <td>{{$task->task}}</td>
                             <td>
-                            @if($task->iscompleted)
-                            <button class="btn btn-success">Completed</button>
-                            @else
-                            <button class="btn btn-warning">Not Completed</button>
-                            @endif
+                                @if($task->iscompleted)
+                                <button class="btn btn-success">Completed</button>
+                                @else
+                                <button class="btn btn-warning">Not Completed</button>
+                                @endif
+                            </td>
+                            <td>
+                                <a href="/markascompleted/{{$task->id}}" class="btn btn-primary">Mark as Completed</button>
                             </td>
                         </tr>
                         @endforeach
