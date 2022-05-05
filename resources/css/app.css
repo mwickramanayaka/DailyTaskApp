@@ -1,0 +1,14 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fnerdist.com%2Farticle%2Fdoctor-strange-multiverse-of-madness-poster-easter-eggs%2F&psig=AOvVaw2CkAmSJ_YLM8fgknI0VrkU&ust=1651865933220000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKjAsqOOyfcCFQAAAAAdAAAAABAO") center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
