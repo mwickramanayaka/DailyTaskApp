@@ -14,7 +14,7 @@
         <div class="text-center">
             <h1>Daily Tasks</h1>
             <div class="row">
-                <div class="mx-auto" style="width: 700px;">
+                <div class="mx-auto" style="width: 900px;">
                     @foreach($errors->all() as $error)
                     <div class="alert alert-danger" role="alert">
                         {{$error}}
@@ -45,7 +45,11 @@
                                 @endif
                             </td>
                             <td>
+                                @if(!$task->iscompleted)
                                 <a href="/markascompleted/{{$task->id}}" class="btn btn-primary">Mark as Completed</button>
+                                    @else
+                                    <a href="/markasnotcompleted/{{$task->id}}" class="btn btn-danger">Mark As Not Completed</button>
+                                        @endif
                             </td>
                         </tr>
                         @endforeach
